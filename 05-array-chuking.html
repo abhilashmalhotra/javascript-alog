@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algo</title>
+</head>
+<body>
+	<script>	
+		function arraychunk(arr, size) {
+			var chunkedArr = [ ];
+			for(var element of arr){
+				var last = chunkedArr[chunkedArr.length -1];
+				if(!last || last.length == size){
+					chunkedArr.push([element]);
+				}
+				else{
+					last.push(element);
+				}
+			}
+			console.log(chunkedArr);
+		}
+
+		arraychunk([30,10,40,50,94,20,10],2);
+	</script>
+</body>
+</html>
