@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algo</title>
+</head>
+<body>
+	<script>	
+		function anagrams(stringA, stringB) {
+			var aCharMap = 	buildCharMap(stringA);
+			var bCharMap = buildCharMap(stringB);
+			if(Object.keys(aCharMap).length !== Object.keys(bCharMap).length){
+				return false;
+			}
+			for(var char in aCharMap){
+				if(aCharMap[char] !== bCharMap[char]){
+					return false;
+				}
+			}
+			return true;		
+		}
+
+		function buildCharMap (str) {
+			var charMap = {};
+			for(var char of str.replace(/[^\w\s]/gi, '')){
+				charMap[char] = charMap[char] + 1 || 1;
+				// if(charMap[char]){
+				// 	charMap[char]++
+				// }
+				// else{
+				// 	charMap[char] = 1;
+				// }
+			}
+			return charMap;
+		}		
+		anagrams('rail saftey!', 'reil saftay!');
+	</script>
+</body>
+</html>
