@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algo</title>
+</head>
+<body>
+	
+
+	<script>		
+		
+		function reverseInt(num) {
+			var getString = num.toString();
+			var reversedInt = getString.split('').reverse().join('');
+			if(num < 0){
+				return '-'+parseInt(reversedInt);
+			}
+			else{
+				return parseInt(reversedInt);
+			}
+			
+		}
+
+
+
+		var result = reverseInt(-254);
+		console.log(result);
+		
+
+		
+	</script>
+</body>
+</html>
